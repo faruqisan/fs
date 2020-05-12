@@ -26,8 +26,11 @@ jobs:
       run: |
         go get -v -t -d ./...
         
-    - name: Build
-      run: go build -v .
-
     - name: Test
       run: go test -v .
+        
+    - name: Build
+      run: go build -v .
+    
+    - name: GitHub Releases
+      uses: fnkr/github-action-ghr@v1.3
